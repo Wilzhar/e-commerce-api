@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module Users
+module Auth
   # Registrations controller
-  class RegistrationsController < Devise::RegistrationsController
+  class RegistrationsController < DeviseTokenAuth::SessionsController
     # before_action :configure_sign_up_params, only: [:create]
     # before_action :configure_account_update_params, only: [:update]
 

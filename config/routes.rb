@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   
   mount_devise_token_auth_for 'User', at: 'auth', skip: [:confirmations]
 
-  namespace :auth do
-    delete 'logout_all', to: 'sessions#logout_all'
-  end
+  devise_scope :user do
+    delete '/auth/logout_all', to: 'auth/sessions#logout_all'
+  end  
 
   get 'test', to: 'test#test'
 end
