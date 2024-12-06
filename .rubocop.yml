@@ -1,0 +1,42 @@
+# .rubocop.yml
+
+# Include files and directories to analyze
+AllCops:
+  TargetRubyVersion: 3.0 # Update this to match your Ruby version
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'public/**/*'
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'config.ru'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+
+# Define specific rules or customize behavior here
+Layout/LineLength:
+  Max: 100 # Adjust to your project's line length preference
+
+Metrics/MethodLength:
+  Max: 10 # Limit method length (adjust as needed)
+
+Metrics/BlockLength:
+  Max: 25 # Limit block length (adjust as needed)
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/ClassLength:
+  Max: 200 # Limit class length (adjust as needed)
+
+# Example of ignoring specific cop for files
+Metrics/AbcSize:
+  Exclude:
+    - 'app/helpers/**/*.rb'
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes # Prefer single quotes for strings
